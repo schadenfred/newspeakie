@@ -1,0 +1,20 @@
+%p#notice= notice
+%h1 Whistles
+%table
+  %thead
+    %tr
+      %th Singular name
+      %th Plural name
+      %th Whistle type
+      %th{:colspan => "3"}
+  %tbody
+    - @whistles.each do |whistle|
+      %tr
+        %td= whistle.singular_name
+        %td= whistle.plural_name
+        %td= whistle.whistle_type
+        %td= link_to 'Show', whistle
+        %td= link_to 'Edit', edit_whistle_path(whistle)
+        %td= link_to 'Destroy', whistle, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Whistle', new_duckspeak_whistle_path

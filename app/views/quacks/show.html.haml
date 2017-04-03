@@ -1,0 +1,7 @@
+%p#notice= notice
+%p
+  %strong Content:
+  = @quack.content
+= link_to 'Edit', edit_quack_path(@quack)
+|
+= link_to 'Back', quacks_path

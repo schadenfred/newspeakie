@@ -1,0 +1,32 @@
+<%= form_for([@duckspeak, @whistle]) do |f| %>
+  <% if whistle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(whistle.errors.count, "error") %> prohibited this whistle from being saved:</h2>
+
+      <ul>
+      <% whistle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :singular_name %>
+    <%= f.text_field :singular_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :plural_name %>
+    <%= f.text_field :plural_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :whistle_type %>
+    <%= f.text_field :whistle_type %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

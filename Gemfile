@@ -9,6 +9,8 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem "haml-rails", "~> 0.9"
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -24,6 +26,10 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+
+gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'faker'
+gem 'faker-stoked', github: 'schadenfred/faker-stoked'#, tag: 'v0.2.8'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -31,11 +37,40 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+group :development do
+gem 'web-console'
 
+end
 group :development, :test do
 
 # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-gem 'web-console'
+gem 'listen', '~> 3.0.5'
+
+
+
+gem 'byebug', platform: :mri
+
+gem 'minitest-rails'
+
+gem 'factory_girl_rails'
+
+
+gem 'guard'
+gem 'guard-minitest'
+gem 'guard-livereload'
+
+# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+gem 'spring'
+gem 'spring-watcher-listen', '~> 2.0.0'
+
+gem 'minitest-rails-capybara'
+gem 'capybara-email'
+
+gem 'selenium-webdriver'
+
+gem 'minitest-given'
+# Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+
 gem 'listen', '~> 3.0.5'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring'
@@ -47,6 +82,17 @@ gem 'capybara-email'
 gem 'selenium-webdriver'
 gem 'minitest-given'
 
+# mocks & stubs
+gem 'mocha'
+
+# for save_and_open_page method in capybara to work
+gem 'launchy'
+
+# clean out database between runs
+gem 'database_cleaner'
+
+# nyan cat, motherfuckers:
+gem 'minitest-nyan-cat'
 # mocks & stubs
 gem 'mocha'
 

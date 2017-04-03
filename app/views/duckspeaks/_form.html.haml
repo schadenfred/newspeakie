@@ -1,0 +1,20 @@
+= form_for(duckspeak) do |f|
+  - if duckspeak.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(duckspeak.errors.count, "error")
+        prohibited this duckspeak from being saved:
+      %ul
+        - duckspeak.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :tagline
+    = f.text_field :tagline
+  .actions
+    = f.submit

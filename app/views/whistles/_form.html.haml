@@ -1,0 +1,20 @@
+= form_for([@duckspeak, @whistle]) do |f|
+  - if whistle.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(whistle.errors.count, "error")
+        prohibited this whistle from being saved:
+      %ul
+        - whistle.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :singular_name
+    = f.text_field :singular_name
+  .field
+    = f.label :plural_name
+    = f.text_field :plural_name
+  .field
+    = f.label :whistle_type
+    = f.text_field :whistle_type
+  .actions
+    = f.submit

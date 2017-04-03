@@ -1,0 +1,25 @@
+%p#notice= notice
+%p
+  %strong Singular name:
+  = @whistle.singular_name
+%p
+  %strong Plural name:
+  = @whistle.plural_name
+%p
+  %strong Whistle type:
+  = @whistle.whistle_type
+= link_to 'Edit', edit_whistle_path(@whistle)
+|
+= link_to 'Back', duckspeak_path(@whistle.duckspeak)
+
+%hr
+%h1 quacks for this whistle
+= form_for @whistle.quacks.new, remote: true do |f|
+  .form-group
+    = f.text_field :content
+    = f.hidden_field :whistle_id, value: @whistle.id
+  .form-group
+    = f.submit
+%ul
+  - render @whistle.quacks
+

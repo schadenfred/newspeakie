@@ -1,0 +1,44 @@
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended that you check this file into your version control system.
+
+ActiveRecord::Schema.define(version: 20170330232433) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "duckspeaks", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "tagline"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "quacks", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "whistle_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["whistle_id"], name: "index_quacks_on_whistle_id", using: :btree
+  end
+
+  create_table "whistles", force: :cascade do |t|
+    t.string   "singular_name"
+    t.string   "plural_name"
+    t.string   "whistle_type"
+    t.integer  "duckspeak_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["duckspeak_id"], name: "index_whistles_on_duckspeak_id", using: :btree
+  end
+
+end

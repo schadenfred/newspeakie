@@ -1,0 +1,20 @@
+%p#notice= notice
+%h1 Duckspeaks
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th Tagline
+      %th{:colspan => "3"}
+  %tbody
+    - @duckspeaks.each do |duckspeak|
+      %tr
+        %td= duckspeak.name
+        %td= duckspeak.description
+        %td= duckspeak.tagline
+        %td= link_to 'Show', duckspeak
+        %td= link_to 'Edit', edit_duckspeak_path(duckspeak)
+        %td= link_to 'Destroy', duckspeak, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Duckspeak', new_duckspeak_path

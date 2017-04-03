@@ -1,0 +1,16 @@
+%p#notice= notice
+%h1 Quacks
+%table
+  %thead
+    %tr
+      %th Content
+      %th{:colspan => "3"}
+  %tbody
+    - @quacks.each do |quack|
+      %tr
+        %td= quack.content
+        %td= link_to 'Show', quack
+        %td= link_to 'Edit', edit_quack_path(quack)
+        %td= link_to 'Destroy', quack, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Quack', new_quack_path
