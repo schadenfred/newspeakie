@@ -1,7 +1,7 @@
-require "test_helper"
+# require "test_helper"
 
-class HomepageRouteTest < ActionDispatch::IntegrationTest
-  def test_homepage
-    assert_routing "/", :controller => "home", :action => "index"
-  end
-end
+# class HomepageRouteTest < ActionDispatch::IntegrationTest
+#   def test_homepage
+#     assert_routing "/lorem", :controller => "duckspeaks", :action => "index"
+#   end
+# end
