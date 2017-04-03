@@ -1,28 +1,20 @@
 class DuckspeaksController < ApplicationController
   before_action :set_duckspeak, only: [:show, :edit, :update, :destroy]
 
-  # GET /duckspeaks
-  # GET /duckspeaks.json
   def index
     @duckspeaks = Duckspeak.all
   end
 
-  # GET /duckspeaks/1
-  # GET /duckspeaks/1.json
   def show
   end
 
-  # GET /duckspeaks/new
   def new
     @duckspeak = Duckspeak.new
   end
 
-  # GET /duckspeaks/1/edit
   def edit
   end
 
-  # POST /duckspeaks
-  # POST /duckspeaks.json
   def create
     @duckspeak = Duckspeak.new(duckspeak_params)
 
@@ -37,8 +29,6 @@ class DuckspeaksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /duckspeaks/1
-  # PATCH/PUT /duckspeaks/1.json
   def update
     respond_to do |format|
       if @duckspeak.update(duckspeak_params)
@@ -51,8 +41,6 @@ class DuckspeaksController < ApplicationController
     end
   end
 
-  # DELETE /duckspeaks/1
-  # DELETE /duckspeaks/1.json
   def destroy
     @duckspeak.destroy
     respond_to do |format|
@@ -61,14 +49,12 @@ class DuckspeaksController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_duckspeak
-      @duckspeak = Duckspeak.find(params[:id])
-    end
+private
+  def set_duckspeak
+    @duckspeak = Duckspeak.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def duckspeak_params
-      params.require(:duckspeak).permit(:name, :description, :tagline)
-    end
+  def duckspeak_params
+    params.require(:duckspeak).permit(:name, :description, :tagline)
+  end
 end
