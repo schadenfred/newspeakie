@@ -40,13 +40,16 @@ guard :minitest, spring: "bin/rails test" do
 
   watch(%r{^app/(.+)\.rb$})                               { |m|
     "test/#{m[1]}_test.rb" }
-  watch(%r{^app/policies/(.+)\.rb$})                      { |m|
-    "test/policies/#{m[1]}_test.rb" }
+  watch(%r{^app/policies/(.+)\.rb$}) { |m| "test/policies/#{m[1]}_test.rb" }
+
+  watch(%r{^config/routes.rb}) { |m| "test/routes/*" }
 
   watch(%r{^app/policies/application_policy\.rb$})        { |m|
     "test/policies" }
 
   watch(%r{^app/controllers/application_controller\.rb$}) {'test/controllers' }
+
+  watch(%r{^config/routes.rb}) { 'test/routes'}
 
   watch(%r{^test/controllers/json/(.+)/.+\.json})        { |m|
     "test/controllers/#{m[1]}_controller_test.rb" }

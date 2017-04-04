@@ -65,8 +65,9 @@ gem 'spring-watcher-listen', '~> 2.0.0'
 
 gem 'minitest-rails-capybara'
 gem 'capybara-email'
-
-gem 'selenium-webdriver'
+gem 'poltergeist'
+# gem 'capybara-webkit'
+# gem 'selenium-webdriver'
 
 gem 'minitest-given'
 # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

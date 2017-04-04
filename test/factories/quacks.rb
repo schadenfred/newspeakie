@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :quack do
-    content "MyString"
+    content "wakwakwaddlewaddle"
     whistle
   end
 end

@@ -8,7 +8,12 @@ require 'minitest/rails/capybara'
 require 'minitest/given'
 require 'minitest/nyan_cat'
 
+# Capybara.javascript_driver = :webkit
 
+# Capybara and poltergeist integration
+# require "capybara/rails"
+require "capybara/poltergeist"
+Capybara.javascript_driver = :poltergeist
 
 Dir[File.expand_path('test/support/*.rb')].each { |file| require file }
 include TestMatchers
@@ -31,3 +36,4 @@ end
 
 class ActionDispatch::IntegrationTest
 end
+

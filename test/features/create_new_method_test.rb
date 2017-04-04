@@ -2,7 +2,7 @@ require "test_helper"
 
 class CreateNewMethodTest < Capybara::Rails::TestCase
 
-  describe "create new language" do
+  feature "create new method" do
 
     Given(:duckspeak) { FactoryGirl.create(:duckspeak) }
     Given(:attrs) { FactoryGirl.attributes_for(:whistle) }
